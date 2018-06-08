@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>Notebook</title>
+  <!-- Icons & Stylesheets -->
+  <link href="https://fonts.googleapis.com/icon?
+        family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Include the library in the page -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/marked"></script>
+
+  <!-- Notebook app -->
+  <div id="notebook">
+    <!--Side Baar-->
+    <aside class="side-bar">
+      <div class="toolbar">
+        <button :title="notes.length + ' note(s) Saved'" @click="addNote">
+          <i class="material-icons"></i>Add note
+        </button>
+      </div>
+    </aside>
+    <!-- Main pane -->
+    <section class="main">
+      <textarea v-model="content"></textarea>
+    </section>
+    <!--preview pane-->
+    <aside class="preview" v-html="notePreview">
+      {{notePreview}}
+    </aside>
+  </div>
+  <!-- Some Java
+
+Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
